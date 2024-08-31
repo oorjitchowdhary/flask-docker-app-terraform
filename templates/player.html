@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Players</title>
+</head>
+<body>
+    <h1>List of Soccer Players</h1>
+    <ul>
+        {% for player in players %}
+        <li><a href="/player/{{ loop.index0 }}">{{ player['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+[tw-172-25-129-115 templates]% cat player.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ player['name'] }}</title>
+</head>
+<body>
+    <h1>{{ player['name'] }}</h1>
+    <img src="{{ player['image_url'] }}" alt="{{ player['name'] }}" width="400">
+</body>
+</html>
